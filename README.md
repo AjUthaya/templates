@@ -1,1 +1,1 @@
-# Cotainerization Templates
+# Containerization Templates
