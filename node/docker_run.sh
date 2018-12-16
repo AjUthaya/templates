@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ### REQUIRED: Declare variable ###
-Container_Name="nginx"
-Port="80"
+Container_Name="node"
+Port="70"
 ### REQUIRED: Declare variable ###
 
 Host="127.0.0.1"

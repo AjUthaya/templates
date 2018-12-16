@@ -1,0 +1,17 @@
+{
+  "name": "containerization-templates",
+  "version": "1.0.0",
+  "description": "PLACEHOLDER",
+  "author": "Aj",
+  "private": true,
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "compose": "cd compose && docker-compose up",
+    "compose:down": "cd compose && docker-compose down",
+    "nginx": "cd nginx && ./docker_run.sh",
+    "php": "cd php && ./docker_run.sh",
+    "node": "",
+    "mysql": ""
+  }
+}

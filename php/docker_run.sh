@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ### REQUIRED: Declare variable ###
-Container_Name="nginx"
-Port="80"
+Container_Name="php"
+Port="60"
 ### REQUIRED: Declare variable ###
 
 Host="127.0.0.1"
@@ -80,7 +80,7 @@ echo -e "  \xE2\x9E\x96 Running docker image ..."
 
 #____ START: Run docker image ____#
 
-Temp_Run=$(docker run -d --name $Container_Name -p $Host:$Port:80$Build_Id)
+Temp_Run=$(docker run -d -it --name $Container_Name -p $Host:$Port:80$Build_Id)
 Container_List=$(docker ps)
 
 
