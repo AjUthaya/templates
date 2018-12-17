@@ -51,3 +51,9 @@ MySQL is an open source relational database management system (RDBMS). Its name 
 phpMyAdmin is a free and open source administration tool for MySQL and MariaDB. As a portable web application written primarily in PHP, it has become one of the most popular MySQL administration tools, especially for web hosting services.
 
 [Link to docs](https://www.phpmyadmin.net/docs/)
+
+### CircleCI
+
+CircleCI is Continuous Integration, a development practice which is being used by software teams allowing them to to build, test and deploy applications easier and quicker on multiple platforms.
+
+[Link to docs](https://circleci.com/docs/)
