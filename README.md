@@ -1,6 +1,6 @@
 # Containerization Templates
 
-Templates for docker run & docker compose
+Templates for Dockerfile & docker-compose.yml
 
 ## Technologies
 
