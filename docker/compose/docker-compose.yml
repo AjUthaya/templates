@@ -5,8 +5,30 @@ services:
   # App (NGINX)
   app:
     image: ajuthaya/nginx
+    volumes:
+      - /opt/docker/index.php:/code/
+      - /opt/docker/site.conf:/etc/nginx/conf.d/site.conf
     ports:
-      - "80:3000"
-  # CertBot
-  certbot:
-    image: certbot/certbot
+      - 127.0.0.1:3000:80
+    restart: always
+    links:
+      - php
+
+  # PHP
+  php:
+    image: php:7-fpm
+    restart: always
+
+  # MySql
+  mysql:
+    image: ajuthaya/mysql
+    ports:
+      - 127.0.0.1:3306:3306
+    volumes:
+      - /opt/docker/mysql/compose:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql_dev_root}
+      MYSQL_DATABASE: ${mysql_dev_database}
+      MYSQL_USER: ${mysql_dev_username}
+      MYSQL_PASSWORD: ${mysql_dev_password}
