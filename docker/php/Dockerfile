@@ -1,5 +1,5 @@
 # Base image
-FROM php:7.3-fpm
+FROM php:7.0-fpm
 
 # Add MySQL interfaces
 RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
