@@ -6,9 +6,11 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mys
 
 # Update apt-get
 # Install nginx
+# Install git
 # Clear out the local repository of retrieved package files
 RUN apt-get update && apt-get install -y \
     nginx \
+    git \
     && apt-get clean
 
 # Copy config files for php
@@ -17,7 +19,6 @@ COPY php.ini-production /usr/local/etc/php/php.ini-production
 
 # Copy nginx config
 COPY default.conf /etc/nginx/conf.d/default.conf
-
 
 # Expose nginx port
 EXPOSE 80
