@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### REQUIRED: Declare variable ###
-Container_Name="nginx"
+Container_Name="nginx-php"
 Port="80"
 ### REQUIRED: Declare variable ###
 
