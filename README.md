@@ -1,3 +1,3 @@
-# Containerization Templates
+# Templates
 
-Template files to speed up the setup for new projects
+Templates for different technologies, to speed up the setup process of new applications.
