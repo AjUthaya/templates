@@ -1,21 +1,25 @@
 # Base image
-FROM nginx:1.14.2-alpine
+FROM nginx:1.15-alpine
 
 # Add www-data
 RUN addgroup -g 1000 -S www-data \
     && adduser -u 1000 -D -S -G www-data www-data
 
-# Update/Upgrade APK
+# Update/upgrade packages list
 RUN apk update \
     upgrade \
+    && apk add \
     # Bash
-    & apk add bash \
+    bash \
     bash-doc \
     bash-completion \
     # Git
     git \
     # Nano
-    nano
+    nano \
+    # Curl
+    curl \
+    && rm -f /var/cache/apk/*
 
 # Copy nginx config
 COPY nginx.conf /etc/nginx/nginx.conf

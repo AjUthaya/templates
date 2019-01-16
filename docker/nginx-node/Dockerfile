@@ -1,5 +1,5 @@
 # Base image
-FROM node:10.15.0-alpine
+FROM node:10.15-alpine
 
 # Add www-data
 RUN addgroup -g 2000 -S www-data \
