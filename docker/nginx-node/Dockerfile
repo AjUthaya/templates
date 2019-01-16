@@ -1,21 +1,37 @@
 # Base image
-FROM nginx:1.14.2-alpine
+FROM node:10.15.0-alpine
 
 # Add www-data
-RUN addgroup -g 1000 -S www-data \
-    && adduser -u 1000 -D -S -G www-data www-data
+RUN addgroup -g 2000 -S www-data \
+    && adduser -u 2000 -D -S -G www-data www-data
 
-# Update/Upgrade APK
+# Update/upgrade packages list
 RUN apk update \
     upgrade \
+    && apk add \
     # Bash
-    & apk add bash \
+    bash \
     bash-doc \
     bash-completion \
+    # NGINX
+    nginx \
     # Git
     git \
     # Nano
-    nano
+    nano \
+    # Curl
+    curl \
+    && rm -f /var/cache/apk/*
+
+# NVM
+RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+# NVM: Create bash profile
+RUN touch /root/.bashrc \
+    & echo "source /root/.nvm/nvm.sh" >> /root/.bashrc
+
+# NVM: Source bash profile
+RUN source /root/.bashrc
 
 # Copy nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
