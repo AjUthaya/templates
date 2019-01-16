@@ -41,6 +41,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 # Set work directory
 WORKDIR /usr/share/nginx/html
 
+# Index file
+RUN touch /usr/share/nginx/html/index.html
+
 # Start services
 CMD ["nginx", "-g", "daemon off;"]
 
