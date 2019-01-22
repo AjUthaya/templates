@@ -44,6 +44,9 @@ WORKDIR /usr/share/nginx/html
 # Index file
 RUN touch /usr/share/nginx/html/index.html
 
+# Update npm
+RUN npm update -g
+
 # Start services
 CMD ["nginx", "-g", "daemon off;"]
 
