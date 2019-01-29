@@ -1,7 +1,7 @@
 # Base image
 FROM node:10.15-alpine
 
-# Add www-data
+# Add www-data user
 RUN addgroup -g 2000 -S www-data \
     && adduser -u 2000 -D -S -G www-data www-data
 
@@ -40,6 +40,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Set work directory
 WORKDIR /usr/share/nginx/html
+
+# Update ownership
+RUN chown -R www-data:www-data /usr/share/nginx/html
 
 # Index file
 RUN touch /usr/share/nginx/html/index.html

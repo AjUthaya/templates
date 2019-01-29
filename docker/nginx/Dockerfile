@@ -29,6 +29,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 # Set work directory
 WORKDIR /usr/share/nginx/html
 
+# Update ownership
+RUN chown -R www-data:www-data /usr/share/nginx/html
+
 # Start services
 CMD ["nginx", "-g", "daemon off;"]
 
