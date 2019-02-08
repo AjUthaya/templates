@@ -1,6 +1,12 @@
-# Email sample
+# Email sample project
 
-## Device support ([EmailOnAcid](https://www.emailonacid.com/))
+## Device support
+
+### Basic links
+
+- [Testing plattform (EmailOnAcid)](https://www.emailonacid.com/)
+
+- [Link to CSS support for email clients](https://www.campaignmonitor.com/css/color-background/background-image/)
 
 ### Tested on:
 
@@ -24,31 +30,59 @@ display: none;mso-hide: all;overflow: hidden;height: 0; max-height: 0;width: 0;m
 
 ```html
 <img
-  src="{src}"
-  width="{width}"
-  height="{height}"
+  src="{image_path}"
+  width="{image_width}"
+  height="{image_height}"
   border="0"
-  alt="{alt}"
-  style="{style}; display: block; border: 0px;"
+  alt="{image_alt}"
+  style="display: block; border: 0px;"
 />
 ```
 
-### Link:
+### Outlook: Conditional statements
 
 ```html
-<a href="#" style="{style}">{style}</a>
-```
-
-### Outlook conditional statement
-
-```html
+<!-- Targets Outlook 2007 and up -->
 <!--[if mso]>
   Outlook content
 <![endif]-->
 
+<!-- Default: Target all but Outlook 2007 and up -->
 <!--[if !mso]> <!---->
 Non-outlook content
 <!-- <![endif]-->
+```
+
+### Outlook: Keep margins
+
+Outlook strips out margin with a lowercase but not Margin with a capital M
+
+Change this:
+
+```css
+p {
+  margin: 10px;
+}
+```
+
+To this:
+
+```
+p {
+  Margin: 10px;
+}
+```
+
+### Table container:
+
+```html
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      Content
+    </td>
+  </tr>
+</table>
 ```
 
 ### Padding-based button:
@@ -57,16 +91,17 @@ Non-outlook content
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td
-      bgcolor="#{bgcolor}"
-      style="padding: {padding}; -webkit-border-radius: {webkit-border-radius}; border-radius:{border-radius};"
-      align="{align}"
+      bgcolor="{button_background}"
+      style="padding: {button_padding}; border-radius:{button_border_radius};"
+      align="{button_align}"
     >
       <a
-        href="{link}"
+        href="{button_link}"
         target="_blank"
-        style="font-size: {font-size}px; font-family: {font}; color: #{color}; text-decoration: {decoration}; display: {display};"
-        >{button text}</a
+        style="font-size: {button_font_size}; font-family: {button_font_family}; color: {button_font_color}; text-decoration: {button_font_decoration}; display: {button_display};"
       >
+        Link
+      </a>
     </td>
   </tr>
 </table>
@@ -79,11 +114,12 @@ Non-outlook content
   <tr>
     <td>
       <a
-        href="{link}"
+        href="{button_link}"
         target="_blank"
-        style="font-size: {font-size}px; font-family: {font}; color: #{color}; text-decoration: {decoration}; border-radius: {border-radius}px; -webkit-border-radius: {webkit-border-radius}px; background-color: #{bgcolor}; border-top: {border-top}; border-bottom: {border-bottom}; border-right: {border-right}; border-left: {border-left}; display: inline-block;"
-        >{button text}</a
+        style="font-size: {button_font_size}; font-family: {button_font_family}; color: {button_font_color}; text-decoration: {button_font_decoration}; border-radius: {button_border_radius}; background-color: {button_background}; border: {button_border};display: inline-block;"
       >
+        Link
+      </a>
     </td>
   </tr>
 </table>
@@ -95,14 +131,14 @@ Non-outlook content
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td
-      align="{align}"
-      style="border-radius: {border-radius}px;"
-      bgcolor="#{bgcolor}"
+      align="{button_align}"
+      style="border-radius: {button_border_radius};"
+      bgcolor="#{button_background}"
     >
       <a
-        href="{link}"
+        href="{button_link}"
         target="_blank"
-        style="font-size: {font-size}px; font-family: {font}; color: #{color}; text-decoration: {decoration}; border-radius: {border-radius}px; padding: {padding}; border: {border}; display: inline-block;"
+        style="font-size: {button_font_size}; font-family: {button_font_family}; color: {button_font_color}; text-decoration: {button_font_decoration}; border-radius: {button_border_radius}; padding: {button_padding}; border: {button_border}; display: inline-block;"
         >{button text}</a
       >
     </td>
