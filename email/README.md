@@ -10,7 +10,7 @@
 
 ### Tested on:
 
-- Placeholder
+- Not tested with diffrent devices yet
 
 ## Snippets for email
 
@@ -51,26 +51,6 @@ display: none;mso-hide: all;overflow: hidden;height: 0; max-height: 0;width: 0;m
 <!--[if !mso]> <!---->
 Non-outlook content
 <!-- <![endif]-->
-```
-
-### Outlook: Keep margins
-
-Outlook strips out margin with a lowercase but not Margin with a capital M
-
-Change this:
-
-```css
-p {
-  margin: 10px;
-}
-```
-
-To this:
-
-```
-p {
-  Margin: 10px;
-}
 ```
 
 ### Table container:
