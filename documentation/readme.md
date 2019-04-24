@@ -15,7 +15,7 @@ Write a few lines about the project here. Lorem Ipsum is simply dummy text of th
 
 ### Repos
 
-- CATEGORY ([REPO_NAME](https://github.com/AjUthaya/REPO_NAME))
+- Frontend ([project-frontend-nodejs](https://github.com/AjUthaya/REPO_NAME))
 - CATEGORY ([REPO_NAME](https://github.com/AjUthaya/REPO_NAME))
 
 ## Application
