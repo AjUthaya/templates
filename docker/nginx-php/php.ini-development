@@ -907,6 +907,9 @@ soap.wsdl_cache_limit = 5
 ; Sets the maximum number of open links or -1 for unlimited.
 ldap.max_links = -1
 
+upload_max_filesize = 100M
+post_max_size = 100M
+
 [dba]
 ;dba.default_handler=
 
